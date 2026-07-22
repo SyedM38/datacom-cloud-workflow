@@ -1,0 +1,19 @@
+name: Datacom CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run Onboarding Script
+        run: |
+          echo "Executing Datacom Cloud CI/CD Pipeline"
+          echo "Current Environment: ${{ vars.ENV_STAGE }}"
